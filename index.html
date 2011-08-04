@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>$.ui.vScroll (jQuery UI Slider習作)</title>
+<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<style>
+article, aside, dialog, figure, footer, header, hgroup, menu, nav, section { display: block; } 
+.mod_vScroll {
+	position: relative;
+	width: 200px;
+	height: 300px;
+}
+.mod_vScroll .content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+.mod_vScroll ul li {
+	list-style-type: none;
+	margin-bottom: 10px;
+}
+
+.sliderWrap {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 14px;
+	background-color: #eee;
+}
+.sliderVertical {
+	position: relative;
+	height: 100%;
+}
+.ui-slider-handle {
+	display: block;
+	position: absolute;
+	width: 12px;
+	height: 10px;
+	cursor: default;
+	border: 1px solid #999;
+}
+
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+<script type="text/javascript" src="resources/jquery.mousewheel.min.js"></script>
+
+<script type="text/javascript" src="resources/linenumberwriter.js"></script>
+<script type="text/javascript" src="resources/script.js"></script>
+<link rel="stylesheet" type="text/css" href="resources/linenumberwriter.css">
+<link rel="stylesheet" type="text/css" href="resources/style.css">
+
+
+<script type="text/javascript" src="jquery.vScroll.js"></script>
+<script type="text/javascript">
+$(function () {
+$('.mod_vScroll').vScroll({
+	sliderWrapperClassName: "sliderWrap",
+	sliderClassName: "sliderVertical"
+});
+});
+</script>
+</head>
+<body>
+<div class="area_container">
+
+<div class="area_bd">
+
+<section>
+<h2>Demo</h2>
+<div class="mod_vScroll">
+<ul class="content">
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+<li><img src="http://dummyimage.com/180x120/000/fff.png" alt="" width="180" height="120" /></li>
+</ul>
+<!--mod_vScroll--></div>
+</section>
+
+
+<section>
+<h2>HTML</h2>
+<pre><code>&lt;div class=&quot;mod_vScroll&quot;&gt;&lt;-- Scroll wrapper --&gt;
+&lt;div class=&quot;content&quot;&gt;&lt;-- Scroll contents --&gt;
+&lt;!-- Some vertical scroll contents here --&gt;
+&lt;/div&gt;
+
+&lt;!-- Slider (generated from JavaScript) --&gt;
+&lt;div class=&quot;sliderWrap&quot;&gt;&lt;!-- Slider wrapper. "sliderWrap" class is optional --&gt;
+&lt;div class=&quot;sliderVertical ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all&quot;&gt;&lt;!-- "sliderVertial" class is optional --&gt;
+&lt;a href=&quot;#&quot; class=&quot;ui-slider-handle ui-state-default ui-corner-all&quot;&gt;&lt;/a&gt;&lt;!-- Scroll handle --&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+</section>
+
+<section>
+<h2>CSS</h2>
+<pre><code>/* ".mod_vScroll" is specified by jQuery selector */
+.mod_vScroll {
+	position: relative;
+	width: 200px;
+	height: 300px;
+}
+/* ".content" is fixed */
+.mod_vScroll .content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+.mod_vScroll ul li {
+	list-style-type: none;
+	margin-bottom: 10px;
+}
+
+/* ".sliderWrap" is optional */
+.sliderWrap {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 14px;
+	background-color: #eee;
+}
+/* ".sliderVertical" is optional */
+.sliderVertical {
+	position: relative;
+	height: 100%;
+}
+/* ".ui-slider-wrap" is fixed */
+.ui-slider-handle {
+	display: block;
+	position: absolute;
+	width: 12px;
+	height: 10px;
+	cursor: default;
+	border: 1px solid #999;
+}</code></pre>
+</section>
+
+<section>
+<h2>JavaScript</h2>
+<pre><code>$(function () {
+/* $(some selector).vScroll() */
+$('.mod_vScroll').vScroll({
+	sliderWrapperClassName: "sliderWrap",
+	sliderClassName: "sliderVertical"
+});
+});</code></pre>
+</section>
+
+<!--/.area_bd--></div>
+
+<footer class="area_ft">
+<p class="copyright"><small>Author: <a href="http://likealunatic.jp/">Naoki Sekiguchi</a></small></p>
+<!--/.area_ft--></footer>
+
+</div>
+
+</body>
+</html>

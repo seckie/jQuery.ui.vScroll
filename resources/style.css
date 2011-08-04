@@ -1,0 +1,179 @@
+/**
+ * Style for kaelab demo page templates
+ *
+ * @author     RaNa design associates, inc.
+ * @copyright  2010 RaNa design associates, inc.
+ * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @version    Release: 1.0
+ * @since      2010-10-27
+ * @update     2010-11-01
+ */
+
+/**
+ * import reset style
+ */
+@import url("html5reset.css");
+
+/* style for element selector
+ * ----------------------------------------*/
+html { height: 100%; }
+body {
+	min-height: 100%;
+	background: #fff;
+    color: #333;
+	font-family: Meiryo, "メイリオ", Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic", Osaka, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+/**
+ * sectioning contents
+ */
+section {
+	padding: 0 0 1em;
+}
+section section {
+	margin-left: 15px;
+}
+
+/**
+ * heading contents
+ */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+h4, h5, h6 { font-size: 14px; }
+
+/**
+ * flow contents
+ */
+img, object { border: 0; vertical-align: bottom; }
+a:link, a:visited {  }
+em { font-style: normal; }
+
+	/**
+	 * forms
+	 */
+textarea { font-size: 100%; }
+button, input[type="submit"] { cursor: pointer; }
+
+
+/* common modules
+ * ----------------------------------------*/
+
+/**
+ * mod_dataTable
+ */
+.mod_dataTable table,
+.mod_dataTable th,
+.mod_dataTable td {
+	border: 1px solid #999;
+}
+.mod_dataTable th {
+	padding: 2px 10px;
+	background-color: #EEE;
+	background-image: linear-gradient(top, #f6f6f6, #ccc);
+	background-image: -moz-linear-gradient(top, #f6f6f6, #ccc);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#ccc));
+	text-shadow: 1px 1px 0 #fff;
+	line-height: 1.25;
+}
+.mod_dataTable td {
+	padding: 5px 5px 5px 10px;
+}
+.mod_dataTable .colh {
+	width: 1%;
+	white-space: nowrap;
+}
+
+/**
+ * mod_datebasedTable
+ */
+.mod_datebasedTable table,
+.mod_datebasedTable th,
+.mod_datebasedTable td {
+}
+.mod_datebasedTable th {
+	background-color: #EEE;
+}
+.mod_datebasedTable td {
+	padding: 5px 10px;
+}
+.mod_datebasedTable .colh td {
+	width: 1%;
+	white-space: nowrap;
+}
+
+/* layout container
+ * ----------------------------------------*/
+.area_container {
+    position: relative;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+ /** header
+  * ----------------------------------------*/
+.area_hd {
+	background-color: #dbdbdb;
+	*zoom: 1;
+}
+.area_hd:after {
+	content:""; display:block; clear:both;
+}
+	.area_hd .siteTitle {
+		float: left;
+		padding: 5px 10px;
+	}
+
+	/**
+	 * nav_hd
+	 */
+	.nav_hd {
+		float: right;
+		width: 10em;
+		padding: 5px 15px;
+		text-align: right;
+	}
+
+ /** content
+  * ----------------------------------------*/
+.area_bd {
+	position: relative;
+	padding: 2em 15px;
+	*zoom: 1;
+}
+.area_bd h1, .area_bd h2, .area_bd h3, .area_bd h4, .area_bd h5, .area_bd h6,
+.area_bd p, .area_bd blockquote, .area_bd pre,
+.area_bd ul, .area_bd ol, .area_bd dl,
+.area_bd form,
+.area_bd table
+{
+	margin: .25em 0 1em;
+}
+
+ /** footer
+  * ----------------------------------------*/
+.area_ft {
+	padding: 0 15px;
+	background-color: #dddddd;
+	font-size: 12px;
+}
+	
+	/**
+	 * copyright
+	 */
+.area_ft .copyright {
+	padding: 5px 0;
+}
+	.area_ft .copyright a {
+		color: #333;
+		text-decoration: none;
+	}
+	.area_ft .copyright a:hover,
+	.area_ft .copyright a:focus,
+	.area_ft .copyright a:active {
+		text-decoration: underline;
+	}
+
