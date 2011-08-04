@@ -3,7 +3,7 @@
  *
  * @Author:    Naoki Sekiguchi (http://likealunatic.jp/)
  * @License:   http://www.opensource.org/licenses/mit-license.html  MIT License
- * @Update:    2011-04-03 14:42:16
+ * @Update:    2011-08-04 21:21:31
  * Depends on:
  *   jQuery (http://jquery.com/)
  *   jQuery UI (http://jqueryui.com/)
@@ -56,9 +56,9 @@ $.widget("ui.vScroll", {
 			var handleHeight = Math.round((1 - proportion) * $scPane.height());
 			handleHeight -= handleHeight % 2;
 
-			var $slHandle = $('.ui-slider-handle', $scPane);
-			var slBdWidth = parseInt($slHandle.css('border-top-width').replace('px', ''));
-			slBdWidth += parseInt($slHandle.css('border-bottom-width').replace('px', ''));
+			var $slHandle = $('.ui-slider-handle', $scPane[0]);
+			var slBdWidth = parseInt($slHandle.css('border-top-width'), 10);
+			slBdWidth += parseInt($slHandle.css('border-bottom-width'), 10);
 			if (isNaN(slBdWidth)) { slBdWidth = 0; } // for IE
 
 			$slHandle.css({
@@ -99,3 +99,4 @@ $.widget("ui.vScroll", {
 });
 
 })(jQuery);
+
